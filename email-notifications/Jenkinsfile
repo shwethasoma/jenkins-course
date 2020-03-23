@@ -22,6 +22,7 @@ node {
     // set variables
     println('hi')
     def subject = "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} ${currentBuild.result}"
+    echo $subject
     def content = '${JELLY_SCRIPT,template="html"}'
 
     // send email
