@@ -22,11 +22,11 @@ node {
     // set variables
     println('hi')
     def subject = "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} ${currentBuild.result}"
-    echo $subject
     def content = '${JELLY_SCRIPT,template="html"}'
 
     // send email
     if(to != null && !to.isEmpty()) {
+      println('bye')
       emailext(body: content, mimeType: 'text/html',
          replyTo: '$DEFAULT_REPLYTO', subject: subject,
          to: to, attachLog: true )
