@@ -20,6 +20,7 @@ node {
     // mark build as failed
     currentBuild.result = "FAILURE";
     // set variables
+    println('hi')
     def subject = "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} ${currentBuild.result}"
     def content = '${JELLY_SCRIPT,template="html"}'
 
